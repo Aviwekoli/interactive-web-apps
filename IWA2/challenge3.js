@@ -4,7 +4,7 @@
  * - to impress investors
 */
 
-console.warn('Security scan starting');
+console.warn("Security scan starting");
 
 /* It is important to let user know when they can close the page  */
 
