@@ -22,6 +22,6 @@ const leo = `${leoName.split(" ").join("")} ${leoSurname.split(" ").join("")} (O
 const sarah = `${sarahName.split(" ").join("")} ${sarahSurname} (Owed: R ${sarahBalanceValue})`;
 const total = `Total amount owed: R ${owed.slice(0, 2)} ${owed.slice(2)}`;
 
-const result = `\n ${leo} \n ${sarah} \n \n ${divider } \n   ${total} \n ${divider} \n`;
+const result = `\n ${leo} \n ${sarah} \n \n ${divider } \n ${"  "}${total} \n ${divider} \n`;
 
 console.log(result); 
