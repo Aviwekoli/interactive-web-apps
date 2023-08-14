@@ -38,12 +38,11 @@ BANNED_WARNING = 'Unfortunately we do not ship to your country of residence';
 NONE_SELECTED = 0;
 
 let customers = 1;
-const location = 'RSA';
+const location = 'Brazil';
 let currency = 'R';
-let shipping = 0;
+let shipping = null;
 let cost = 0;
 let totalCost = 0;
-// let shipping = cost = totalCost = null;
 
 shoes = 300 * 1;
 toys = 100 * 5;
@@ -58,6 +57,9 @@ if (location === 'RSA'){
     if (cost >= 1000 && customers === 1){
         shipping = 0;
     }
+    else{
+        console.log(FREE_WARNING);
+    }
 }
 else if(location === 'namibia'){
     shipping = 600;
@@ -70,7 +72,8 @@ else if(location === 'namibia'){
 }
 
 else if(location === 'northKorea'){
-    console.log(BANNED_WARNING);}
+    console.log(BANNED_WARNING);
+}
 else{
     shipping = 800;
 }

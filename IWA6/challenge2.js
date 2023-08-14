@@ -17,4 +17,4 @@ else{
 	console.log('Balance cannot be calculated at this time');
 }
 
-console.log(`'R${balance.toFixed(2)}`);
+console.log(`R ${balance.toFixed(2)}`);
