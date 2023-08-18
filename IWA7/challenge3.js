@@ -10,6 +10,14 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
+// const owed = parseInt('R' + leoBalance + sarahBalance)
+// const leo = "{leoName} + {leoSurname} + \"Owed\" + \"R\" + {sarahBalance}"
+// const sarah = "{leoName} + {surname} + \"Owed\" + \"R\" + {sarahBalance}"
+// const total = "Total amount owed: "
+// const result = leo + sarah + divider + divider + total + owed + divider
+
+// console.log(result)
+
 // Converting the balance strings to float numbers to 2 decimal places
 const leoBalanceValue = (-1 * parseFloat(leoBalance)).toFixed(2);
 const sarahBalanceValue = (-1 * parseFloat(sarahBalance)).toFixed(2);
