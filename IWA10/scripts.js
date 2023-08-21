@@ -104,7 +104,7 @@ const futureId = 9
 
 
 
-console.log(holidays['futureId']|| `ID ${futureId} not created yet`);
+console.log(holidays['futureId'] || `ID ${futureId} not created yet`);
 
 /**
  * Creating a deep copy (clone) of the holidays object and setting it's time to 00:00
@@ -115,7 +115,7 @@ const copied = Object.assign({}, holidays[6]);
 const correctDate = new Date(holidays[6].date);
 correctDate.setHours(0);
 correctDate.setMinutes(0);
-
+ 
 /**
  * Checking if the copied date is earlier and apply the changes to copied
  */
