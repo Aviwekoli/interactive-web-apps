@@ -64,7 +64,7 @@ const STATUS_MAP = {
 // Style edits for Book 1 (THE GOOD BOOK) =====>>>>>> overdue
 const book1 = document.querySelector('#book1');
 
-let status0 = book1.querySelector('.status');
+const status0 = book1.querySelector('.status');
 status0.style.color = STATUS_MAP.overdue.color;
 
 let reserve0 = book1.querySelector('.reserve');
@@ -77,10 +77,10 @@ let checkin0 = book1.querySelector('.checkin');
 checkin0.style.color = 'black';
 checkin0 = STATUS_MAP.overdue.canCheckIn ? 'enabled' : 'disabled';
 
-// Style edits for Book 2 (THE BOOK OF BOOKS) ====>>>>>> reserved
+//Style edits for Book 2 (THE BOOK OF BOOKS) ====>>>>>> reserved
 const book2 = document.querySelector('#book2');
 
-let status2 = book2.querySelector('.status');
+const status2 = book2.querySelector('.status');
 status2.style.color = STATUS_MAP.reserved.color;
 
 let reserve2 = book2.querySelector('.reserve');
@@ -96,7 +96,7 @@ checkin2 = STATUS_MAP.reserved.canCheckIn ? 'enabled' : 'disabled';
 // Style edits for Book 3 (ANOTHER BOOK) ====>>>>>> shelf
 const book3 = document.querySelector('#book3');
 
-let status3 = book3.querySelector('.status');
+const status3 = book3.querySelector('.status');
 status3.style.color = STATUS_MAP.shelf.color;
 
 let reserve3 = book3.querySelector('.reserve');
