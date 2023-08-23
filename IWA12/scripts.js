@@ -27,6 +27,7 @@ const STATUS_MAP = {
 
 // Edit below line 
  const buttonElem = document.querySelectorAll('button');
+ console.log(buttonElem)
  for (i =0; i< buttonElem.length; i++) {
      buttonElem[i].style.color = '';
  }
