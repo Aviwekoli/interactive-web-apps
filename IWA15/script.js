@@ -25,7 +25,11 @@ const {lists:
 	[,third]]} = data || {};
 
 const result = [];
-
+/**
+ * The extractBiggest function looks for the last item in each array,
+ * and checks which array contains the biggest last item, and the removes it,
+ * the removed item is then pushed to the the result array.
+ */
 const extractBiggest = () => {
 	firstLast = first[first.length -1];
 	secondLast = second[second.length -1];
