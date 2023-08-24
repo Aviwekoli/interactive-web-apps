@@ -62,10 +62,15 @@ const MONTHS = [
       },
     },
   };
-
+  // Only edit below this line
+   // Destructuring the data object to create variables NM372 and SV782 
   const {response: {data:{NM372, SV782}}} = data;
-  const{firstName, surname, id, races} = NM372
 
+    /**
+   * The creatHtml function creates an HTML Document fragment which,
+   * holds the information about each athlete's race stats and,
+   * Each athlete is distinguished by their unique ID's.
+   */
   const createHtml = (athlete) => {
     const {firstName, surname, id, races} = athlete;
     const fullName = `${firstName} ${surname}`;
@@ -125,20 +130,23 @@ const MONTHS = [
     
     const list = document.createElement('dl');
     list.innerHTML = /* html*/ `
-      <dt>Athlete</dt>  
+      <dt>Athlete:</dt>  
       <dd>${fullName}</dd>
-      <dt>Total Races</dt>
+      <dt>Total Races:</dt>
       <dd>${raceNumber}</dd>
-      <dt>Event Date (Latest)</dt>
+      <dt>Event Date (Latest):</dt>
       <dd>${latestDate}</dd>
       <dt>Total Time (Latest):</dt>
       <dd>${timeFormat}</dd>
       `;
   fragment.appendChild(list)  
-    //return athleteElement;
     return fragment
   }
-
+  /**
+   * The following selects each athlete's section from the HTML file and,
+   * adds or appends its respective heading and a discription list which
+   * contains the athletes stats.
+   */
   document.querySelector('[data-athlete = "NM372"]').appendChild(createHtml(NM372));
   document.querySelector('[data-athlete = "SV782"]').appendChild(createHtml(SV782));
 
