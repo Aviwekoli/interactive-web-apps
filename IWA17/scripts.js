@@ -79,10 +79,10 @@ console.log(createData())
  * value:
  * The resulting HTML is then combined or concatenated with the existing HTML name
  */
-const addCell = (existing, classString, value) => {
+const addCell = (existing, classString, value, style) => {
     const result = `
         ${existing}
-        <td class="${classString}">
+        <td class="${classString}" style="${style}">
             &nbsp;${value}&nbsp;
         </td>
     `;
@@ -107,14 +107,15 @@ const createHtml = (data) => {
             const isToday = new Date().getDate() === value;
             const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
             const isAlternate = week % 2 === 0;
-
+            const isCurrentDay = isToday && new Date().getMonth() === new Date().getMonth();
             let classString = 'table__cell';
 
             if (isToday) classString += ' table__cell_today';
             if (isWeekend) classString += ' table__cell_weekend';
             if (isAlternate) classString += ' table__cell_alternate';
 
-            inner = addCell(inner, classString, value);
+            const style = isCurrentDay ? 'color: blue; background: rgba(0, 0, 255, 0.1);' : '';
+            inner = addCell(inner, classString, value, style);
         }
 
         result = `
