@@ -110,8 +110,7 @@ const MONTHS = [
 
      if (seconds < 60){
       timeFormat = `${hours.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-     }
-     else{
+     } else{
      hours = Math.floor(seconds/60);
      seconds = seconds%60;
      timeFormat = `${hours1.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
