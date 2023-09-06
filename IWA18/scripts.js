@@ -1,22 +1,16 @@
 /**
  * Importing functions from view.js and data.js 
  */
+
+//import {TABLES, COLUMNS, state} from './data.js';
 import {html} from './view.js';
 import {createOrderHtml} from './view.js';
-//import {createTableOptionsHtml} from './view.js';
+import {createTableOptionsHtml} from './view.js';
 import {updateDraggingHtml} from './view.js';
 import {moveToColumn} from './view.js';
 import {createOrderData} from './data.js';
-//import {createUniqueId} from './data.js';
-//const {help: {overlay, cancel}} = html;
-// const overlap1 = document.querySelector('[data-help-overlay]');
-// const help1 = document.querySelector('[data-help]');
+import {createUniqueId} from './data.js';
 
-// console.log(overlap1);
-
-// help1.addEventListener('click', function(){
-//     overlap1.style.display = 'block';
-// })
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -46,11 +40,17 @@ const handleDragOver = (event) => {
     updateDraggingHtml({ over: column })
 }
 
+// const handleDragStart = (event) => {
+//     const orderId = event.target.dataset.id;
+//     event.dataTransfer.setData('text/plain', orderId);
+//     updateDragging({ source: orderId });
+// }
 
-const handleDragStart = (event) => {
+// const handleDragEnd = (event) => {
+//     updateDragging({ source: null });
+//     updateDraggingHtml({});
+// }
 
-}
-const handleDragEnd = (event) => {}
 
 const handleHelpToggle = (event) => {
     const {help: {overlay, cancel}} = html;
@@ -86,17 +86,36 @@ const handleAddToggle = (event) => {
     form.reset();
     overlay.style.display = '';
 }
-const handleEditToggle = (event) => {
-    const { edit: overlay, title, table, id, column } = html;
-}
-const handleEditSubmit = (event) => {}
-const handleDelete = (event) => {}
+// const handleEditToggle = (event) => {
+//     const { edit: { overlay, cancel } } = html;
+//     const orderId = event.target.closest('.order').dataset.id;
+//     const order = state.orders[orderId];
 
-html.add.cancel.addEventListener('click', handleAddToggle)
+//     html.edit.title.value = order.title;
+//     html.edit.table.value = order.table;
+//     html.edit.id.value = order.id;
+//     html.edit.column.value = order.column;
+//     overlay.showModal();
+//     cancel.addEventListener('click', function() {
+//         overlay.close();
+//     });
+// }
+const handleEditSubmit = (event) => {
+
+}
+const handleDelete = (event) => {
+
+}
+
+//html.add.cancel.addEventListener('click', handleAddToggle)
 html.other.add.addEventListener('click', handleAddToggle)
 html.add.form.addEventListener('submit', handleAddSubmit)
-
 html.other.grid.addEventListener('click', handleEditToggle)
+// html.other.grid.addEventListener('click', function(event) {
+//     if (event.target.closest('.order')) {
+//         handleEditToggle(event); // Delegate click to edit handler if clicked on an order
+//     }
+// });
 html.edit.cancel.addEventListener('click', handleEditToggle)
 html.edit.form.addEventListener('submit', handleEditSubmit)
 html.edit.delete.addEventListener('click', handleDelete)

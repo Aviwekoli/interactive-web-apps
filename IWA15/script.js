@@ -12,7 +12,7 @@ const data = {
  * Extracting the lists from the object data using both object and arrays destruction
  * and assing the list to desireable variables
  */
-
+//const fitstList = data.list.first;
 const {
 	lists: 
 	[ [, first]]} = data || {};

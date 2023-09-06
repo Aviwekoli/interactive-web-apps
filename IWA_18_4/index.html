@@ -7,6 +7,7 @@
     <title>Kitchen Express</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./scripts.js" defer type="module"></script>
+    <script src="./view.js" defer type="module"></script>
   </head>
 
   <body>
@@ -108,3 +109,30 @@
     <div class="backdrop"></div>
   </body>
 </html>
+
+/* javascript functions to use*/
+const updateDraggingHtml = (newDragging) => {
+  const { over = state.dragging.over } = newDragging
+
+  for (const columnName of COLUMNS) {
+      const value = columnName === over ? 'rgba(0, 160, 70, 0.2)' : ''
+      html.area[columnName].style.backgroundColor = value
+  }
+}
+
+const moveToColumn = (id, newColumn) => {
+  const htmlSource = document.querySelector(`[data-id="${id}"]`) 
+  const duplicate = htmlSource.cloneNode(true)
+  html.columns[newColumn].appendChild(duplicate)
+  htmlSource.remove()
+}
+
+export const updateDragging = (newDragging) => {
+  const { source = state.dragging.source, over = state.dragging.over } = newDragging
+  if (over === state.dragging.over) return
+
+  state.dragging = {
+      source,
+      over,
+  }
+}
