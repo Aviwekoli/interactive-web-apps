@@ -3,10 +3,10 @@
 
 The *Kitchen Express* is a desktop app, it will be used in restaurants to help them track customer orders from the moment they are taken by a waiter until they are finally served to the customer. It also records the table number and the exact time that the order was created <br>
 
-## Application Preview
+## :movie_camera: Application Preview
 
 ![](https://codespace.ams3.digitaloceanspaces.com/lesson/1804/embedded/IWA_18-1.gif)
-## ::bust_in_silhouette:: Author
+## :bust_in_silhouette: Author
 Aviwe Koli 
 ## :computer: Technologies Used
 
